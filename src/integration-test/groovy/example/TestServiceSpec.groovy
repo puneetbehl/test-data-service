@@ -11,16 +11,15 @@ class TestServiceSpec extends Specification {
 
     TestService testService
     TestBean testBean
+    LibraryService libraryService
 
     @Autowired
     List<BookService> bookServiceList
 
     void "test data-service is loaded correctly"() {
-        when:
-        testService.testDataService()
 
-        then:
-        noExceptionThrown()
+        expect:
+        libraryService.bookService != null
     }
 
     void "test autowire by type"() {
